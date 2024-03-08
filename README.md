@@ -12,20 +12,28 @@ The MOTD Python Class is a lightweight and easily pluggable solution for adding 
 ## Usage
 1. Clone or download the repository to your local machine.
 2. Copy the `motd.py` file into your Python project directory.
-3. Ensure that the text files containing messages are located in the specified file path.
+3. Ensure that the text files containing messages are located in the specified file path (`data/` by default).
 4. Import the `MOTD` class into your Python script.
-5. Create an instance of the `MOTD` class, specifying the file path to the text file containing messages.
-6. Call the `get_random_message()` method to retrieve a random message for display.
+5. Create an instance of the `MOTD` class.
+6. Call the appropriate method to retrieve or set messages.
 
 Example usage:
 ```python
 from motd import MOTD
 
-# Create an instance of the MOTD class
-motd = MOTD(file_path="data/proved_wrong_quotes.txt")
+# Create an instance of the MOTD class (default file_path is "data/")
+motd = MOTD()
 
-# Retrieve and display a random message
-print("Today's message: ", motd.get_random_message())
+# Retrieve and display a random message from a text file in the data folder
+print("Today's message: ", motd.get_random_message_from_catalogue())
+```
+Alternatively, to set a specific message:
+```python
+# Set a specific message
+motd.set_message("Have a great day!")
+
+# Retrieve and display the set message
+print("Today's message: ", motd.get_message())
 ```
 
 ## Text Files
